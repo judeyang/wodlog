@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'welcome#index'
+
+    resources :wods
+    root 'wods#index'
+
 end

@@ -1,0 +1,10 @@
+<h1> Add a WOD </h1>
+
+<%= simple_form_for @wod do |f| %>
+
+<%= f.input :wodname %>
+<%= f.input :description %>
+<%= f.input :introduction %>
+
+  <%= f.submit "Submit" %>
+<% end %>
