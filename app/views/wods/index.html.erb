@@ -13,6 +13,10 @@
       <%= wod.introduction %>
     </td>
     <td>
+      <%= link_to("Edit", edit_wod_path(wod)) %> |
+      <%= link_to("Destroy", wod_path(wod), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+    </td>
+    <td>
       <%= wod.created_at %>
     </td>
   </tr>

@@ -1,4 +1,7 @@
 class WodsController < ApplicationController
+
+before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+
     def show
       @wod = Wod.find(params[:id])
     end
@@ -34,9 +37,17 @@ class WodsController < ApplicationController
         end
       end
 
+      def destroy
+       @wod = Wod.find(params[:id])
+
+       @wod.destroy
+
+       redirect_to wods_path
+     end
+
       private
 
       def wod_params
-        params.require(:wod).permit(:wodname, :description)
+        params.require(:wod).permit(:wodname, :description, :introduction)
       end
 end
