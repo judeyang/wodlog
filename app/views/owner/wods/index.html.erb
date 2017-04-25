@@ -1,0 +1,25 @@
+<div class="pull-right">
+  <%= link_to("Add a wod", new_owner_wod_path, :class => "btn btn-danger" ) %>
+</div>
+
+<br><br>
+
+<table class="table table-boldered">
+  <% @wods.each do |wod| %>
+  <tr>
+    <td>
+      <%= link_to(wod.wodname, owner_wod_path(wod)) %>
+    </td>
+    <td>
+      <%= wod.introduction %>
+    </td>
+    <td>
+      <%= link_to("Edit", edit_owner_wod_path(wod)) %> |
+      <%= link_to("Destroy", owner_wod_path(wod), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+    </td>
+    <td>
+      <%= wod.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</table>

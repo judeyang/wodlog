@@ -1,0 +1,10 @@
+<h1> Edit a wod </h1>
+
+<%= simple_form_for [:owner, @wod ] do |f| %>
+
+<%= f.input :wodname %>
+<%= f.input :description %>
+<%= f.input :introduction %>
+
+    <%= f.submit "Submit", :class => "btn btn-success" %>
+<% end %>

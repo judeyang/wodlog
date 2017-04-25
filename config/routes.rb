@@ -4,4 +4,7 @@ Rails.application.routes.draw do
     resources :wods
     root 'wods#index'
 
+    namespace :owner do
+      resources :wods
+    end
 end
