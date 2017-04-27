@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WOD Log </title>
+        <%= csrf_meta_tags %>
+
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+
+    <body>
+
+        <div class="container-fluid">
+            <%= render "common/navbar" %>
+            <%= render "common/flashes" %>
+            <div class="row">
+              <div class="col-md-2">
+                <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
+                  <li class="active"><%= link_to("All WODs", owner_wods_path ) %> </li>
+                </ul>
+                <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
+                  <li class="active"><%= link_to("Favorites", owner_wods_path ) %> </li>
+                </ul>
+
+                <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
+                   <li class="dropdown active">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                          Officeial WODs <span class="caret"></span>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Open WODs</a></li>
+                        <li><a href="#">The Girls</a></li>
+                        <li><a href="#">Heros</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Bodyweight</a></li>
+                      </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
+                  <li class="active"><%= link_to("Custom", owner_wods_path ) %> </li>
+                </ul>
+                <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
+                  <li class="active"><%= link_to("Box WODs", owner_wods_path ) %> </li>
+                </ul>
+
+              </div>
+
+
+              <div class="col-md-10">
+                <%= yield %>
+              </div>
+           </div>
+        </div>
+
+        <%= render "common/footer" %>
+
+    </body>
+</html>

@@ -3,6 +3,9 @@ class Owner::WodsController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
   before_action :require_is_owner
+   layout "owner"
+
+
    def show
      @wod = Wod.find(params[:id])
    end
