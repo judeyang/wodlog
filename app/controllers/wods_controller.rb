@@ -7,7 +7,7 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
     end
 
     def index
-      @wods = Wod.all
+      @wods = Wod.where(:is_hidden => false).order("created_at DESC")
     end
 
     def new
@@ -48,6 +48,6 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
       private
 
       def wod_params
-        params.require(:wod).permit(:wodname, :description, :introduction, :wodtype, :box)
+        params.require(:wod).permit(:is_hidden,:wodname, :description, :introduction, :wodtype, :box)
       end
 end

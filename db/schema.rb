@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170427034321) do
+ActiveRecord::Schema.define(version: 20170427040621) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -34,10 +34,11 @@ ActiveRecord::Schema.define(version: 20170427034321) do
     t.string   "wodname"
     t.text     "description"
     t.text     "introduction"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.string   "wodtype"
     t.string   "box"
+    t.boolean  "is_hidden",    default: false
   end
 
 end

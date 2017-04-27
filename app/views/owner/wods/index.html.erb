@@ -8,6 +8,7 @@
   <% @wods.each do |wod| %>
   <tr>
     <td>
+      <%= render_wod_status(wod) %>
       <%= link_to(wod.wodname, owner_wod_path(wod)) %>
     </td>
     <td>
