@@ -3,8 +3,10 @@
 <%= simple_form_for @wod do |f| %>
 
 <%= f.input :wodname %>
+<%= f.input  :wodtype %>
 <%= f.input :description %>
 <%= f.input :introduction %>
+<%= f.input :box %>
 
-  <%= f.submit "Submit" %>
+  <%= f.submit "Submit", :class => "btn btn-info"%>
 <% end %>

@@ -46,12 +46,12 @@ class Owner::WodsController < ApplicationController
      redirect_to owner_wods_path
    end
 
-   
+
 
    private
 
    def wod_params
-     params.require(:wod).permit(:wodname, :description, :introduction)
+     params.require(:wod).permit(:wodname, :description, :introduction, :wodtype, :box)
    end
 
 end

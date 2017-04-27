@@ -3,8 +3,10 @@
 <%= simple_form_for [:owner, @wod ] do |f| %>
 
 <%= f.input :wodname %>
+<%= f.input  :wodtype %>
 <%= f.input :description %>
 <%= f.input :introduction %>
+<%= f.input :box %>
 
     <%= f.submit "Submit", :class => "btn btn-success" %>
 <% end %>

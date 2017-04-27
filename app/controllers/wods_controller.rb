@@ -48,6 +48,6 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
       private
 
       def wod_params
-        params.require(:wod).permit(:wodname, :description, :introduction)
+        params.require(:wod).permit(:wodname, :description, :introduction, :wodtype, :box)
       end
 end
