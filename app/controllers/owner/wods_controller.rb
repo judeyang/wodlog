@@ -49,6 +49,21 @@ class Owner::WodsController < ApplicationController
      redirect_to owner_wods_path
    end
 
+   def publish
+    @wod = Wod.find(params[:id])
+    @wod.publish!
+
+    redirect_to :back
+  end
+
+  def hide
+    @wod = Wod.find(params[:id])
+    @wod.hide!
+
+    redirect_to :back
+  end
+
+
 
 
    private

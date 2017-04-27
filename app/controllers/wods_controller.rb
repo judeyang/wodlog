@@ -4,7 +4,11 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
 
     def show
       @wod = Wod.find(params[:id])
-    end
+      if @wod.is_hidden
+      flash[:warning] = "This WOD already archieved"
+      redirect_to root_path
+      end
+    end 
 
     def index
       @wods = Wod.where(:is_hidden => false).order("created_at DESC")

@@ -5,6 +5,11 @@ Rails.application.routes.draw do
     root 'wods#index'
 
     namespace :owner do
-      resources :wods
+      resources :wods do
+        member do
+          post :publish
+          post :hide
+        end
+      end
     end
 end

@@ -19,6 +19,18 @@
       <%= link_to("Destroy", owner_wod_path(wod), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
     </td>
     <td>
+      <%= link_to("Edit", edit_owner_wod_path(wod)) %>
+      <%= link_to("Destroy", owner_wod_path(wod), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+
+
+      <% if wod.is_hidden %>
+
+        <%= link_to("Publish", publish_owner_wod_path(wod), :method => :post, :class => "btn btn-xs btn-info") %>
+      <% else %>
+        <%= link_to("Hide",hide_owner_wod_path(wod), :method => :post, :class => "btn btn-xs btn-success") %>
+      <% end %>
+    </td>
+    <td>
       <%= wod.created_at %>
     </td>
   </tr>
