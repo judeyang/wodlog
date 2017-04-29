@@ -31,6 +31,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'simple_form'
 gem 'font-awesome-rails'
+gem 'annotate'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

@@ -1,6 +1,7 @@
 class WodsController < ApplicationController
 
 before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+layout "owner"
 
     def show
       @wod = Wod.find(params[:id])
@@ -8,7 +9,7 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
       flash[:warning] = "This WOD already archieved"
       redirect_to root_path
       end
-    end 
+    end
 
     def index
       @wods = Wod.where(:is_hidden => false).order("created_at DESC")

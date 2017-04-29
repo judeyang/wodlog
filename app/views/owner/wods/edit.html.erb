@@ -3,7 +3,8 @@
 <%= simple_form_for [:owner, @wod ] do |f| %>
 
 <%= f.input :wodname %>
-<%= f.input  :wodtype %>
+<%= f.input  :is_time_priority %>
+<%= f.input  :is_task_priority %>
 <%= f.input :description %>
 <%= f.input :introduction %>
 <%= f.input :box %>

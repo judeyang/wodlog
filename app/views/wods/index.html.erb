@@ -5,21 +5,35 @@
 <br><br>
 
 <table class="table table-boldered">
-  <% @wods.each do |wod| %>
-  <tr>
-    <td>
-      <%= link_to(wod.wodname, wod_path(wod)) %>
-    </td>
-    <td>
-      <%= wod.introduction %>
-    </td>
-    <td>
-      <%= link_to("Edit", edit_wod_path(wod)) %> |
-      <%= link_to("Destroy", wod_path(wod), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
-    </td>
-    <td>
-      <%= wod.created_at %>
-    </td>
-  </tr>
-  <% end %>
+
+    <thead>
+        <tr>
+            <td>
+                WOD's Name</td>
+            <td>WOD Type</td>
+            <td>WOD Description</td>
+            <td>WOD Category</td>
+        </tr>
+
+    </thead>
+
+      <tbody>
+            <% @wods.each do |wod| %>
+            <tr>
+                <td>
+                    <%= link_to(wod.wodname, wod_path(wod)) %>
+                </td>
+                <td>
+                    <%= wod.wodtype %>
+                </td>
+                <td>
+                    <%= wod.description %>
+                </td>
+                <td>
+                    <%= wod.created_at %>
+                </td>
+            </tr>
+            <% end %>
+      </tbody>
+
 </table>

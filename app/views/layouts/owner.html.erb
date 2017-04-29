@@ -18,12 +18,9 @@
                 <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
                   <li class="active"><%= link_to("All WODs", owner_wods_path ) %> </li>
                 </ul>
-                <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
-                  <li class="active"><%= link_to("Favorites", owner_wods_path ) %> </li>
-                </ul>
 
                 <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
-                   <li class="dropdown active">
+                   <li class="droprdown active">
                       <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                           Officeial WODs <span class="caret"></span>
                       </a>
@@ -35,6 +32,23 @@
                         <li><a href="#">Bodyweight</a></li>
                       </ul>
                     </li>
+                </ul>
+
+                <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
+                   <li class="dropdown active">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                          WOD Types <span class="caret"></span>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Time Priority</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Task Priority</a></li>
+                      </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
+                  <li class="active"><%= link_to("Favorites", owner_wods_path ) %> </li>
                 </ul>
 
                 <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">

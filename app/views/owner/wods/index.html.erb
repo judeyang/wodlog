@@ -4,7 +4,20 @@
 
 <br><br>
 
+
 <table class="table table-boldered">
+
+  <thead>
+      <tr>
+          <td>
+              WOD's Name</td>
+          <td>WOD Type</td>
+          <td>WOD Description</td>
+          <td>WOD Category</td>
+      </tr>
+
+  </thead>
+
   <% @wods.each do |wod| %>
   <tr>
     <td>
@@ -15,16 +28,9 @@
       <%= wod.introduction %>
     </td>
     <td>
-      <%= link_to("Edit", edit_owner_wod_path(wod)) %> |
-      <%= link_to("Destroy", owner_wod_path(wod), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
-    </td>
-    <td>
-      <%= link_to("Edit", edit_owner_wod_path(wod)) %>
-      <%= link_to("Destroy", owner_wod_path(wod), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
-
-
+        <%= link_to("Destroy", owner_wod_path(wod), :class => "btn btn-xs btn-danger", :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+        <%= link_to("Edit", edit_owner_wod_path(wod), :class => "btn btn-xs btn-warning") %>      
       <% if wod.is_hidden %>
-
         <%= link_to("Publish", publish_owner_wod_path(wod), :method => :post, :class => "btn btn-xs btn-info") %>
       <% else %>
         <%= link_to("Hide",hide_owner_wod_path(wod), :method => :post, :class => "btn btn-xs btn-success") %>
