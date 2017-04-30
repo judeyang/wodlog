@@ -29,7 +29,7 @@
     </td>
     <td>
         <%= link_to("Destroy", owner_wod_path(wod), :class => "btn btn-xs btn-danger", :method => :delete, :data => { :confirm => "Are you sure?" }) %>
-        <%= link_to("Edit", edit_owner_wod_path(wod), :class => "btn btn-xs btn-warning") %>      
+        <%= link_to("Edit", edit_owner_wod_path(wod), :class => "btn btn-xs btn-warning") %>
       <% if wod.is_hidden %>
         <%= link_to("Publish", publish_owner_wod_path(wod), :method => :post, :class => "btn btn-xs btn-info") %>
       <% else %>

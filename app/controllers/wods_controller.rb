@@ -53,6 +53,6 @@ layout "owner"
       private
 
       def wod_params
-        params.require(:wod).permit(:is_hidden,:wodname, :description, :introduction, :wodtype, :box)
+        params.require(:wod).permit(:is_task_priority, :is_time_priority, :is_hidden,:wodname, :description, :introduction, :wodtype, :box)
       end
 end
