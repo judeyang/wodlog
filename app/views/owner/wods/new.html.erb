@@ -3,11 +3,15 @@
 <%= simple_form_for [:owner,@wod] do |f| %>
 
 <%= f.input :wodname %>
-<%= radio_button_tag(:wodtype, "task") %>
-<%= label_tag(:is_task_priority, "Task Priority") %>
+<%= f.input :wodtype, as: :radio_buttons, collection:  [['Task Priority', true], ['Time Priority', false]]%>
+
+<!-- <%= f.input :wodtype, as: :radio_buttons, collection:  [['Task Priority', false], ['Time Priority', true]], required: true %> -->
+<!-- <%= radio_button_tag(:wodtype, "task") %>
+<%= label_tag(:is_task_priority, "Task Priority", :checked => @wod.wodtype) %>
 <br>
 <%= radio_button_tag(:wodtype, "time") %>
-<%= label_tag(:is_time_priority, "Time Priority") %>
+<%= label_tag(:is_time_priority, "Time Priority", :checked => @wod.wodtype) %> -->
+
 <%= f.input :description %>
 <%= f.input :introduction %>
 <%= f.input :box %>

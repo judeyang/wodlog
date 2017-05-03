@@ -28,4 +28,5 @@ class Wod < ApplicationRecord
       self.save
     end
 
+
 end

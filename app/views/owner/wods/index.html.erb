@@ -25,7 +25,11 @@
       <%= link_to(wod.wodname, owner_wod_path(wod)) %>
     </td>
     <td>
-      <%= wod.introduction %>
+        <% if wod.wodtype %>
+          Task Priority
+        <% else %>
+          Time Priority
+        <% end %>
     </td>
     <td>
         <%= link_to("Destroy", owner_wod_path(wod), :class => "btn btn-xs btn-danger", :method => :delete, :data => { :confirm => "Are you sure?" }) %>

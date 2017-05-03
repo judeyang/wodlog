@@ -66,6 +66,8 @@ class Owner::WodsController < ApplicationController
 
 
 
+
+
    private
 
    def wod_params

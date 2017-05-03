@@ -1,9 +1,18 @@
-<h1> <%= @wod.wodname %> </h1>
-
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= @wod.wodname %></h3>
+  </div>
+  <div class="panel-body">
 <p>
   <%= simple_format(@wod.wodname) %>
-  <%= simple_format(@wod.is_task_priority) %>
-  <%= simple_format(@wod.is_time_priority) %>
+
+
+      <% if @wod.wodtype %>
+        <p style="color:#A9A9A9;font-size:11px;">Task Priority</p>
+      <% else %>
+        <p style="color:#A9A9A9;font-size:11px;">Time Priority</p>
+      <% end %>
+
   <%= simple_format(@wod.description) %>
   <%= simple_format(@wod.introduction) %>
   <%= simple_format(@wod.box) %>

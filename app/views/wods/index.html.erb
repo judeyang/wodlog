@@ -24,7 +24,11 @@
                     <%= link_to(wod.wodname, wod_path(wod)) %>
                 </td>
                 <td>
-                    <%= wod.wodtype %>
+                  <% if wod.wodtype %>
+                    Task Priority
+                  <% else %>
+                    Time Priority
+                  <% end %>
                 </td>
                 <td>
                     <%= wod.description %>
