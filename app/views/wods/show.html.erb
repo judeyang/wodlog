@@ -15,6 +15,7 @@
       <%= simple_format(@wod.description) %>
       <%= simple_format(@wod.introduction) %>
       <%= simple_format(@wod.box) %>
+      <%= link_to("提交成绩", new_wod_scoring_path(@wod), :class => "btn btn-success" ) %>
     </p>
   </div>
 </div>

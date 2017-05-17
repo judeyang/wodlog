@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { :registrations => "users/registrations" }
 
-    resources :wods
-    root 'wods#index'
-
     namespace :owner do
       resources :wods do
         member do
@@ -12,4 +9,18 @@ Rails.application.routes.draw do
         end
       end
     end
+
+    resources :scorings
+
+
+    resources :wods do
+      resources :scorings
+    end
+
+
+
+    root 'wods#index'
+
+
+
 end

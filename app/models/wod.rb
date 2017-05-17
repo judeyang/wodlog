@@ -18,6 +18,8 @@
 class Wod < ApplicationRecord
   validates :wodname, :description, presence: true
 
+  has_many :scorings
+
     def publish!
       self.is_hidden = false
       self.save

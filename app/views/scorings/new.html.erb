@@ -1,0 +1,10 @@
+<h3> 投交履历到 <%= @wod.wodname %> </h3>
+
+<hr>
+
+<%= simple_form_for [@wod, @scoring] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :log %>
+
+  <%= f.submit "送出" %>
+<% end %>
