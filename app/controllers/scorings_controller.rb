@@ -8,6 +8,13 @@ class ScoringsController < ApplicationController
 
   def create
     @wod = Wod.find(params[:wod_id])
+    
+    if @wod.wodtype
+      params[:scoring][:content] = params[:scoring][:reps]
+    else
+      params[:scoring][:content] = params[:scoring][:minutes].to_i * 60 + params[:scoring][:minutes].to_i
+    end
+    
     @scoring = Scoring.new(scoring_params)
     @scoring.wod = @wod
     @scoring.user = current_user
