@@ -1,9 +1,18 @@
 <h3> 投交履历到 <%= @wod.wodname %> </h3>
 
 <hr>
-
+<% if @wod.wodtype %>
+  <p style="color:#A9A9A9;font-size:11px;">Task Priority</p>
+<% else %>
+  <p style="color:#A9A9A9;font-size:11px;">Time Priority</p>
+<% end %>
 <%= simple_form_for [@wod, @scoring] do |f| %>
-  <%= f.input :content %>
+  <% if @wod.wodtype %>
+    <%= f.input :reps, as: :integer %>
+  <% else %>
+    <%= f.input :minutes, as: :integer, in: 0..59 %>
+    <%= f.input :seconds, as: :integer, in: 0..59 %>
+  <% end %>
   <%= f.input :log %>
 
   <%= f.submit "送出" %>

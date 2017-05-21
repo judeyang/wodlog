@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170517144410) do
+ActiveRecord::Schema.define(version: 20170521062743) do
 
   create_table "scorings", force: :cascade do |t|
     t.integer  "wod_id"
     t.integer  "user_id"
-    t.text     "content"
+    t.integer  "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "log"

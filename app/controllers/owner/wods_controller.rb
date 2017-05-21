@@ -8,6 +8,7 @@ class Owner::WodsController < ApplicationController
 
    def show
      @wod = Wod.find(params[:id])
+     @scorings = @wod.scorings
    end
 
    def index
